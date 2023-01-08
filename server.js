@@ -6,6 +6,7 @@ const mongoose= require ("mongoose")
 
 // connect to database 
 
+
 //middleware
 app.set ("view engine", "ejs")
 app.set(express.static("public"))

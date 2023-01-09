@@ -1,25 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Homepage DEMO</title>
-    <link rel="stylesheet" href="">
+    <title>Homepage</title>
+    <link rel="stylesheet" href="/style.css">
 </head>
-
 <body>
-
-    <h1> This is the home page</h1>
+    <h1>This is the Home Page!</h1>
     <form action="/new" method="POST">
-        <label for="textinput">Input Text </label>
+        <label for="textinput">Input Text</label>
         <input type="text" name="textinput">
+        <br>
         <label for="numinput">Input Number</label>
         <input type="number" name="numinput" value=0>
-        <button type="submit"> Add Item </button>
+        <br>
+        <button type="submit">Add item</button>
     </form>
-
 
     <ul>
         <% itemList.forEach(item => { %>

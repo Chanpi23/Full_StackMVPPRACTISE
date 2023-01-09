@@ -15,10 +15,12 @@ connectDB()
 //middleware
 app.set ("view engine", "ejs")
 app.set(express.static("public"))
+
+//*Required to properly parse form POST requests - sending data
 app.use(express.urlencoded({extended:true})) // if you have an app with a form you will need to use this line 
 
 //set routes
 app.use('/',homeRoutes)
 
 //start server
-app.listen(PORT,()=>console.log(`Server running on port ${PORT}`))
+app.listen(PORT,()=> console.log(`Server running on port ${PORT}`))

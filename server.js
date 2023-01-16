@@ -1,26 +1,28 @@
-//todo declare variables
-const express= require ("express");
-const app= express()
-const PORT=8001
-const mongoose= require ("mongoose")
+//todo - Declare Variables
+const express = require("express");
+const app = express()
+const PORT = 8000
+const mongoose = require("mongoose")
 
-//import functions/routes
-const connectDB = require('./config/database')
-const homeRoutes= require('./routes/home')
+    //*Import functions/routes
+const connectDB = require("./config/database")
+const homeRoutes = require('./routes/home')
+const editRoutes = require('./routes/edit')
+
 require('dotenv').config({path: './config/.env'})
 
-// connect to database 
+//todo - Connect to Database
 connectDB()
 
-//middleware
-app.set ("view engine", "ejs")
-app.set(express.static("public"))
 
-//*Required to properly parse form POST requests - sending data
-app.use(express.urlencoded({extended:true})) // if you have an app with a form you will need to use this line 
+//todo - Set Middleware
+app.set("view engine", "ejs")
+app.use(express.static("public"))
+app.use(express.urlencoded({extended: true}))
 
-//set routes
+//todo - Set Routes
+app.use('/edit', editRoutes)
 app.use('/',homeRoutes)
 
-//start server
-app.listen(PORT,()=> console.log(`Server running on port ${PORT}`))
+//todo - Start Server
+app.listen(PORT, () => console.log(`Server running on port ${PORT}`))
